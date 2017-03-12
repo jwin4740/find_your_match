@@ -1,0 +1,29 @@
+{
+  "name": "find_your_match",
+  "version": "1.0.0",
+  "description": "friend and dating app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwin4740/find_your_match.git"
+  },
+  "keywords": [
+    "dating",
+    "friend",
+    "match"
+  ],
+  "author": "James J Winkle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwin4740/find_your_match/issues"
+  },
+  "homepage": "https://github.com/jwin4740/find_your_match#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
