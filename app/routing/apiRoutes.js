@@ -3,6 +3,7 @@
 // We are linking our routes to a series of "data" sources.
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // =============================================================================
+var path = require('path');
 
 var matchesData = require("../data/matches.js");
 var friendsData = require("../data/friends.js");
@@ -18,19 +19,21 @@ var friendsData = require("../data/friends.js");
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
 
-
-  exports.matches = function (request, response) {
-    response.json(matchesData);
-     console.log(matchesData);
-  };
+module.exports = function (app) {
 
 
-  exports.friends = function (request, response) {
+
+  app.get("/api/friends", function(request, response) {
     response.json(friendsData);
-     console.log(friendsData);
-  };
+    console.log(friendsData);
+  });
+
+   app.get("/api/matches", function(request, response) {
+    response.json(matchesData);
+    console.log(matchesData);
+  });
+ 
 
 
- exports.notFound = function (request, response) {
-  response.send("<h1> 404 Page not found </h1");
-};
+
+}
