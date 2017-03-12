@@ -38,22 +38,22 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // LISTENER
 // The below code effectively "starts" our server
 // ==============================================================================
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 var apiRoute = require('./app/routing/apiRoutes.js');
- require('./app/routing/htmlRoutes.js')(app);
+require('./app/routing/htmlRoutes.js')(app);
 
 //home
 
 app.get('/api/matches', apiRoute.matches);
 app.get('/api/friends', apiRoute.friends);
-
+app.get('*', apiRoute.notFound);
 
 // allows user to type in a number in the url (which is optional because question mark)
 	// the user input is stored in the episodeNumber variable
 // app.get('/api/matches', routes.matches);
 // NOT FOUND (don't need an 'if statement' because requests execute functions sequentially)
-app.get('*', apiRoute.notFound);
+
 
 
 
